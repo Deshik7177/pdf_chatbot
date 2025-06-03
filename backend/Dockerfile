@@ -25,7 +25,7 @@ COPY . .
 RUN mkdir -p uploads
 
 # Expose FastAPI port
-EXPOSE 8000
+EXPOSE 10000
 
 # Run the app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "10000"]

@@ -1,3 +1,4 @@
+/* App.css */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f7fa;
+  background-color: #f5f5f5;
 }
 
 .app {
@@ -24,6 +25,7 @@ body {
   color: white;
   padding: 2rem;
   text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .app-header h1 {
@@ -41,27 +43,31 @@ body {
 }
 
 .app-content {
-  display: flex;
   flex: 1;
-  gap: 1rem;
-  padding: 1rem;
+  display: flex;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 .sidebar {
   width: 350px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   height: fit-content;
 }
 
 .upload-section,
 .documents-section {
-  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.upload-section {
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .upload-section h2,
@@ -69,22 +75,13 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #2d3748;
+  color: #333;
+  font-size: 1.2rem;
 }
 
 .upload-area {
-  border: 2px dashed #e2e8f0;
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.upload-area:hover {
-  border-color: #667eea;
-  background-color: #f7fafc;
+  position: relative;
 }
 
 .file-input {
@@ -92,16 +89,28 @@ body {
 }
 
 .upload-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
   cursor: pointer;
-  color: #667eea;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  color: #666;
   font-weight: 500;
+}
+
+.upload-label:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+  color: #667eea;
 }
 
 .upload-progress {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
   color: #667eea;
 }
@@ -113,33 +122,35 @@ body {
 
 .document-item {
   padding: 1rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   margin-bottom: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: #fafafa;
 }
 
 .document-item:hover {
-  background-color: #f7fafc;
+  background: #f0f4ff;
   border-color: #667eea;
 }
 
 .document-item.selected {
-  background-color: #667eea;
+  background: #667eea;
   color: white;
   border-color: #667eea;
 }
 
 .document-name {
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 
 .document-info {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   opacity: 0.7;
 }
 
@@ -147,142 +158,161 @@ body {
   flex: 1;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .document-header {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
 }
 
 .document-header h2 {
-  color: #2d3748;
+  color: #333;
   margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 
 .document-header p {
-  color: #718096;
+  color: #666;
 }
 
 .questions-section {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 300px);
 }
 
 .questions-list {
   flex: 1;
+  padding: 1.5rem;
   overflow-y: auto;
-  margin-bottom: 1rem;
-  max-height: 500px;
+  background: #fafafa;
 }
 
 .question-item {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #f7fafc;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .question {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.75rem;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.question .icon {
   color: #667eea;
-  font-weight: 500;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.question span {
+  font-weight: 600;
+  color: #333;
+  line-height: 1.5;
 }
 
 .answer {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 6px;
-  border-left: 4px solid #667eea;
+  padding-left: 2rem;
+  color: #555;
   line-height: 1.6;
-  color: #2d3748;
 }
 
 .question-input {
+  padding: 1.5rem;
+  border-top: 1px solid #e0e0e0;
   display: flex;
   gap: 1rem;
   align-items: flex-end;
-  padding: 1rem;
-  background-color: #f7fafc;
-  border-radius: 8px;
+  background: white;
 }
 
 .question-input textarea {
   flex: 1;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
   padding: 0.75rem;
   font-family: inherit;
   font-size: 1rem;
   resize: vertical;
   min-height: 60px;
+  max-height: 120px;
+  transition: border-color 0.3s ease;
 }
 
 .question-input textarea:focus {
   outline: none;
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.question-input textarea:disabled {
+  background: #f5f5f5;
+  color: #999;
 }
 
 .ask-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #667eea;
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .ask-button:hover:not(:disabled) {
-  background-color: #5a67d8;
+  background: #5a6fd8;
   transform: translateY(-1px);
 }
 
 .ask-button:disabled {
-  opacity: 0.6;
+  background: #ccc;
   cursor: not-allowed;
   transform: none;
 }
 
 .no-document {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  color: #718096;
   text-align: center;
+  padding: 3rem;
+  color: #666;
 }
 
 .no-document .icon.large {
-  width: 64px;
-  height: 64px;
+  width: 4rem;
+  height: 4rem;
   margin-bottom: 1rem;
   opacity: 0.5;
 }
 
 .no-document h2 {
   margin-bottom: 0.5rem;
-  color: #2d3748;
+  color: #333;
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .spinning {
@@ -290,56 +320,60 @@ body {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .app-content {
     flex-direction: column;
-    padding: 0.5rem;
+    padding: 1rem;
+    gap: 1rem;
   }
-  
+
   .sidebar {
     width: 100%;
-    margin-bottom: 1rem;
+    order: 2;
   }
-  
+
+  .main-content {
+    order: 1;
+  }
+
+  .app-header {
+    padding: 1.5rem;
+  }
+
   .app-header h1 {
     font-size: 2rem;
   }
-  
+
+  .questions-section {
+    height: 60vh;
+  }
+
   .question-input {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .ask-button {
     align-self: flex-end;
-    margin-top: 0.5rem;
   }
 }
 
-/* Scrollbar Styling */
-.questions-list::-webkit-scrollbar,
-.documents-list::-webkit-scrollbar {
-  width: 6px;
-}
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
 
-.questions-list::-webkit-scrollbar-track,
-.documents-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.questions-list::-webkit-scrollbar-thumb,
-.documents-list::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 3px;
-}
-
-.questions-list::-webkit-scrollbar-thumb:hover,
-.documents-list::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  .document-info {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 }

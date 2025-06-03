@@ -52,7 +52,8 @@ function App() {
     setUploadProgress(0);
 
     try {
-      const _response = await axios.post(`${API_BASE_URL}/upload`, formData, {
+      // Notice: No unused variable here — we don't store the response unless we want to use it
+      await axios.post(`${API_BASE_URL}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -91,7 +92,7 @@ function App() {
 
     try {
       const response = await axios.post(`${API_BASE_URL}/ask`, formData);
-      
+
       const newQuestion = {
         id: Date.now(),
         question: currentQuestion,

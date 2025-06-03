@@ -8,18 +8,24 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first for better caching
+# Upgrade pip (important!)
+RUN pip install --upgrade pip
+
+# Set cache dir (optional but speeds things up on repeat builds)
+RUN pip config set global.cache-dir /tmp/pip-cache
+
+# Copy and install requirements
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy source code
 COPY . .
 
 # Create uploads directory
 RUN mkdir -p uploads
 
-# Expose port
+# Expose FastAPI port
 EXPOSE 8000
 
-# Command to run the application
+# Run the app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

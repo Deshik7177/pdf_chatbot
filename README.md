@@ -5,12 +5,12 @@ A React-based frontend application for uploading PDF documents and asking questi
 
 ## Features
 
-- **PDF Upload**: Upload PDF documents with drag-and-drop or file selection
-- **Document Management**: View all uploaded documents with metadata
-- **Interactive Q&A**: Ask questions about uploaded documents and get AI-powered answers
-- **Real-time Progress**: Visual feedback for uploads and processing
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Modern UI**: Clean, intuitive interface with smooth animations
+- **PDF Upload**: Upload PDF documents with drag-and-drop or file selection.
+- **Document Management**: View all uploaded documents with metadata.
+- **Interactive Q&A**: Ask questions about uploaded documents and get AI-powered answers.
+- **Real-time Progress**: Visual feedback for uploads and processing.
+- **Responsive Design**: Works seamlessly on desktop and mobile devices.
+- **Modern UI**: Clean, intuitive interface with smooth animations.
 
 ## Tech Stack
 

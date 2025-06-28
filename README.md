@@ -3,7 +3,7 @@
 
 A React-based frontend application for uploading PDF documents and asking questions about their content using AI.
 
-## Features 
+## Features
 
 - **PDF Upload**: Upload PDF documents with drag-and-drop or file selection.
 - **Document Management**: View all uploaded documents with metadata.

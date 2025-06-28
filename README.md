@@ -1,4 +1,4 @@
-# pdf_chatbot
+# pdf_chatbot 
 # PDF Q&A Assistant Frontend
 
 A React-based frontend application for uploading PDF documents and asking questions about their content using AI.
